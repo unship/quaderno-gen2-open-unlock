@@ -17,6 +17,23 @@ Research toward a reproducible, open source way to enable third-party Android ap
 - [`dpt-tools`](https://github.com/HappyZ/dpt-tools) documents root/update methods for Sony Digital Paper devices. Its [Gen 2 A4 issue](https://github.com/HappyZ/dpt-tools/issues/195) reports the update method failing on Quaderno Gen 2; no working fix is documented there.
 - [`dpt-rp1-py`](https://github.com/janten/dpt-rp1-py) supports document/device APIs for Quaderno Gen 2. It is not a root or app-install method.
 
+## Reproduce the stock firmware inspection
+
+This downloads and unpacks the official package on the computer. It does not connect to or modify the Quaderno. The extractor is [`A4_fw_unpacker`](https://github.com/ygjsz/A4_fw_unpacker); run it only on the downloaded package, never on the device.
+
+```sh
+mkdir -p quaderno-work
+cd quaderno-work
+curl -fL 'https://www.fmworld.net/download/digital-paper/sw/FwUpdater_gen2_2.2.09.11030FP.pkg' -o FwUpdater_gen2_2.2.09.11030FP.pkg
+printf '%s  %s\n' 'e9d9a34f1a6154e12ec22fd1fe14c09b1924b258adedbd377964bc6645190e1a' 'FwUpdater_gen2_2.2.09.11030FP.pkg' | sha256sum -c -
+git clone https://github.com/ygjsz/A4_fw_unpacker.git
+cd A4_fw_unpacker
+./unpacker.sh ../FwUpdater_gen2_2.2.09.11030FP.pkg ../unpacked
+unzip -l ../unpacked/contents_archive.zip
+```
+
+The package and extracted firmware images remain Fujitsu materials; the MIT license in this repository applies only to this repository's original notes and code.
+
 ## Verified limits so far
 
 - The host can identify and communicate with the device over MTP and the local device API.
