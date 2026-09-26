@@ -50,6 +50,7 @@ The package and extracted firmware images remain Fujitsu materials; the MIT lice
 - The existing package is verified and extractable; that does not establish that modified contents can be accepted by the device.
 - No A4 Gen 2 Fastboot key sequence has been found in public documentation. Home + Power is only an unverified experiment from other Sony hardware, not a confirmed Quaderno procedure.
 - A community reply reports that the commercial unlock service desolders and reprograms a flash chip, then resolders it. Treat this as an unverified report, not confirmed service documentation: [discussion](https://www.reddit.com/r/FujitsuQuaderno/comments/11y6exi/has_anyone_loaded_other_software_on_the_quaderno/). An earlier specialist forum discussion likewise says no software root method was known and points to chip-level access: [MobileRead thread](https://www.mobileread.com/forums/showthread.php?t=346817).
+- A public A5 Gen 2 repair post includes an internal board photo, but does not identify the storage chip, test pads, or a dump method. It is FMVDP51, so the photo cannot establish A4 FMVDP41 board details: [teardown and recovery post](https://note.com/kanfu0303/n/n4251d670295f).
 - Therefore, the presence of Fastboot commands in U-Boot is not evidence that this device exposes Fastboot or permits unlocking. A read-only Fastboot query is still useful if we can enter that mode safely.
 
 ## Next steps
