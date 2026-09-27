@@ -39,6 +39,7 @@ The package and extracted firmware images remain Fujitsu materials; the MIT lice
 - The host can identify and communicate with the device over MTP and the local device API.
 - Pairing over the local device API succeeded; the client key is stored locally with owner-only permissions.
 - A read-only check confirms the normal paired client can request `/auth/nonce/{client_id}` (HTTP 200), but its request to `/testmode/auth/nonce/{client_id}` gets HTTP 401. The Sony-oriented `dpt-tools` source says test mode needs `K_PRIV_DT`; regular device pairing does not grant that credential.
+- The stock `/system/app/EbookTestMode/EbookTestMode.apk` is a factory diagnostic UI (battery, pen/touch, NFC, and test-file tools). It does not document a bootloader unlock or substitute for the rejected `/testmode` API credential.
 - A temporary USB serial mode switch was not performed. The current account cannot open `/dev/ttyACM0`.
 - No write, update, root, or app-install operation has been attempted.
 - Fujitsu's 797,327,290-byte update package for this firmware was downloaded to `/tmp` and unpacked with `A4_fw_unpacker`; both package signatures verified successfully. SHA-256: `e9d9a34f1a6154e12ec22fd1fe14c09b1924b258adedbd377964bc6645190e1a`.
