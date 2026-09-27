@@ -60,8 +60,8 @@ The package and extracted firmware images remain Fujitsu materials; the MIT lice
 
 ## Next steps
 
-1. Identify whether Fujitsu changed the U-Boot recovery-key stub or determine the board-specific way to invoke the i.MX ROM USB serial-download path. No button combination or boot strap is verified. If Fastboot becomes available, run only `fastboot flashing get_unlock_ability` and `fastboot getvar unlocked`. The official Android Platform-Tools binary is staged under `/tmp/quaderno-platform-tools`; no unlock or flash command has been run.
-2. If those paths are unavailable, determine whether a legitimate test-mode credential exists or obtain board/chip identification and map a read-only dump/recovery method. Do not apply unknown images to the device.
-3. Compare any acquired flash dump with the official package, determine the mechanism behind the commercial modification, and then document a reproducible procedure with A4 Gen 2/firmware coverage and a tested recovery path.
+The owner has ruled out opening the device and paid research. Within that scope, the remaining avenues are to find a documented software entry point, a legitimate test-mode credential, or a public software vulnerability that reaches app installation or boot control. No such avenue is currently verified. The updater's signature check and the missing signing key prevent repackaging the official update based on the evidence collected so far.
+
+If a supported Fastboot or app-install path is discovered, first query its state without changing it. Do not send unlock, flash, erase, or update commands until a verified recovery path exists. The official Android Platform-Tools binary is staged under `/tmp/quaderno-platform-tools`; no unlock or flash command has been run.
 
 The project is exploratory and is not yet a working unlock tool or procedure. The hardware modification path is based on community reports and remains to be confirmed. No public reproduction, tested recovery process, or Google Play installation has been achieved.
