@@ -16,6 +16,7 @@ Research toward a reproducible, open source way to enable third-party Android ap
 - [`A4_fw_unpacker`](https://github.com/ygjsz/A4_fw_unpacker) (MIT) extracts/decrypts Gen 2 update packages. It does not repack or install modified firmware.
 - [`dpt-tools`](https://github.com/HappyZ/dpt-tools) documents root/update methods for Sony Digital Paper devices. Its [Gen 2 A4 issue](https://github.com/HappyZ/dpt-tools/issues/195) reports the update method failing on Quaderno Gen 2; no working fix is documented there.
 - [`dpt-rp1-py`](https://github.com/janten/dpt-rp1-py) supports document/device APIs for Quaderno Gen 2. It is not a root or app-install method.
+- The [unlock video](https://www.youtube.com/watch?v=xUSnAtFd9_c) links to Good e-Reader's [A4 Gen 2 unlock-service listing](https://goodereader.com/blog/product/fujitsu-quaderno-a4-gen-2-android-9-0-unlock-service). The video presents the result and product offer, not a reproducible procedure.
 
 ## Reproduce the stock firmware inspection
 
